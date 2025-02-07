@@ -1,4 +1,3 @@
 package dev.lory24.springboottest1.rest.resources;
 
-public class Health {
-}
+public record Health(boolean success, String stats) { }
