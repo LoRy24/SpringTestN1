@@ -11,6 +11,6 @@ public class HealthController {
     @GetMapping("/health")
     public Health getHealth() {
         SpringBootTest1Application.service.totalHealthChecks++;
-        return new Health(true, "Sono più in salute di te! Mi hai controllato " + SpringBootTest1Application.service.totalHealthChecks + " volte.");
+        return new Health(true, "Sono più in salute di te hahaha! Mi hai controllato " + SpringBootTest1Application.service.totalHealthChecks + " volte.");
     }
 }

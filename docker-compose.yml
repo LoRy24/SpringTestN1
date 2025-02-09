@@ -1,0 +1,25 @@
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "spring-test1-phpmyadmin"
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+    ports:
+      - "8081:80"
+    depends_on:
+      - database
+
+  database:
+      image: mariadb:latest
+      container_name: "spring-test1-database"
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: spring_test1
+      ports:
+        - "3306:3306"
+      volumes:
+        - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
