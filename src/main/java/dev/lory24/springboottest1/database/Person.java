@@ -2,11 +2,13 @@ package dev.lory24.springboottest1.database;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter @Getter
 @Entity
 @Table(name = "people")
+@NoArgsConstructor
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +23,7 @@ public class Person {
     @Column(name = "username")
     private String username;
 
-    public Person() {
-    }
-
+    @SuppressWarnings({"unused", "SpellCheckingInspection"}) // Può non essere usato in quanto viene injectato
     public Person(String firstName, String lastName, String username) {
         this.firstName = firstName;
         this.lastName = lastName;

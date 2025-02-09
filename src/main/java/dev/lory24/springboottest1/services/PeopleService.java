@@ -5,6 +5,7 @@ import dev.lory24.springboottest1.repositories.PeopleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PeopleService {
@@ -34,7 +35,7 @@ public class PeopleService {
      * @param username Username della persona da cercare.
      * @return Persona trovata (se esiste).
      */
-    public Person getPersonByUsername(String username) {
-        return peopleRepository.findByUsername(username).orElse(null);
+    public Optional<Person> getPersonByUsername(String username) {
+        return peopleRepository.findByUsername(username);
     }
 }
